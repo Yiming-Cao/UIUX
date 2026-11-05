@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototype — verbetervoorstel Silver Palace Inc.</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .intro { padding: var(--s8) 0 var(--s6); }
+  .intro p { max-width: 720px; color: var(--ink-2); }
+  .links { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s6); margin: var(--s6) 0 var(--s12); }
+  .link-card { display: block; text-decoration: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: var(--s6); transition: border-color .18s ease-in-out, box-shadow .18s ease-in-out, transform .18s ease-in-out; }
+  .link-card:hover { border-color: var(--ink); box-shadow: var(--e1); transform: translateY(-2px); }
+  .link-card b { font: 600 16px/1.4 var(--font-body); display: block; margin-bottom: var(--s2); }
+  .link-card span { font: 400 var(--small)/1.5 var(--font-body); color: var(--ink-2); }
+  .state-row { display: flex; flex-wrap: wrap; gap: var(--s6); align-items: flex-start; }
+  .state-row figure { margin: 0; }
+  .state-row figcaption { font: 400 var(--caption)/1.5 var(--font-body); color: var(--ink-2); margin-top: var(--s2); }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s4); }
+  .swatch { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+  .swatch i { display: block; height: 72px; }
+  .swatch span { display: block; padding: var(--s2) var(--s3); font: 400 var(--caption)/1.5 var(--font-body); color: var(--ink-2); }
+  .scale div { display: grid; grid-template-columns: 130px 1fr; align-items: baseline; gap: var(--s4); padding: var(--s2) 0; border-bottom: 1px solid var(--line); }
+  .scale b { font: 400 var(--caption)/1.5 var(--font-body); color: var(--ink-2); font-weight: 400; }
+  .is-hover { background: var(--gold-hover) !important; }
+  .is-active { background: var(--gold-active) !important; border-width: 2px !important; }
+  h2.sec { font: 600 var(--h2)/1.3 var(--font-head); margin: var(--s12) 0 var(--s4); }
+</style>
+</head>
+<body>
+
+<div class="proto-bar">
+  <span>Prototype — UI/UX 1 · Yiming · 1192702</span>
+  <span class="on">Overzicht</span>
+  <a href="categorie.html">Categoriepagina</a>
+  <a href="product.html">Productpagina</a>
+</div>
+
+<main class="container">
+  <div class="intro">
+    <p class="eyebrow">Verbetervoorstel · prototype</p>
+    <h1 class="h1" style="margin: var(--s2) 0 var(--s4)">Silver Palace Inc. — van cognitive overload naar een rustige B2B-koopervaring</h1>
+    <p>
+      Dit is het prototype dat bij het verbetervoorstel hoort. Het is met de hand in HTML en CSS gebouwd,
+      zonder framework en zonder Figma: de tokens uit het document (kleur, typografie, spacing, radius,
+      elevatie) zijn de enige bron. Wat je hier ziet, is dus precies wat er in hoofdstuk 6 tot en met 10
+      staat — en niets daarbuiten.
+    </p>
+  </div>
+
+  <div class="links">
+    <a class="link-card" href="categorie.html">
+      <b>Categoriepagina →</b>
+      <span>Filterrail met maat, materiaal en prijs, actieve filters als chips, en drie kaarten per rij
+      op een 12-kolomsgrid. Dit lost de 12.034 producten zonder filter op.</span>
+    </a>
+    <a class="link-card" href="product.html">
+      <b>Productpagina →</b>
+      <span>Eén product in de titel, maat in cm én inch, prijs met staffel, één gouden primaire actie
+      en een bevestiging op de plek van de klik.</span>
+    </a>
+  </div>
+
+  <h2 class="sec" style="margin-top:0">Button — vier varianten, zes states</h2>
+  <p class="meta" style="max-width:640px">Hover en active zijn live op de productpagina; hier staan ze
+  vastgezet zodat je ze in de video kunt laten zien.</p>
+  <div class="state-row" style="margin-top: var(--s4)">
+    <figure><button class="btn btn--primary">Add to cart</button><figcaption>default</figcaption></figure>
+    <figure><button class="btn btn--primary is-hover">Add to cart</button><figcaption>hover</figcaption></figure>
+    <figure><button class="btn btn--primary is-active">Add to cart</button><figcaption>active</figcaption></figure>
+    <figure><button class="btn btn--primary" style="outline:2px solid var(--ink); outline-offset:4px">Add to cart</button><figcaption>focus</figcaption></figure>
+    <figure><button class="btn btn--primary" disabled>Add to cart</button><figcaption>disabled</figcaption></figure>
+    <figure>
+      <button class="btn btn--primary is-loading">
+        <span class="btn__spinner" style="display:block"></span><span class="btn__label">Adding…</span>
+      </button>
+      <figcaption>loading</figcaption>
+    </figure>
+  </div>
+
+  <h2 class="sec">Kleurtokens</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#FAFAFA"></i><span>color-bg-default<br>#FAFAFA</span></div>
+    <div class="swatch"><i style="background:#FFFFFF; border-bottom:1px solid #E2E4E7"></i><span>color-surface-raised<br>#FFFFFF</span></div>
+    <div class="swatch"><i style="background:#121212"></i><span>color-text-primary<br>#121212</span></div>
+    <div class="swatch"><i style="background:#C5A880"></i><span>color-accent<br>#C5A880</span></div>
+    <div class="swatch"><i style="background:#5A5F66"></i><span>color-text-secondary<br>#5A5F66</span></div>
+    <div class="swatch"><i style="background:#1E6B4E"></i><span>color-feedback-success<br>#1E6B4E</span></div>
+    <div class="swatch"><i style="background:#8A5A00"></i><span>color-feedback-warning<br>#8A5A00</span></div>
+    <div class="swatch"><i style="background:#B3261E"></i><span>color-feedback-error<br>#B3261E</span></div>
+  </div>
+
+  <h2 class="sec">Typografische schaal</h2>
+  <div class="scale">
+    <div><b>type-heading-1 · 28/36</b><span class="h1">Tennis Bracelet 3 mm</span></div>
+    <div><b>type-heading-2 · 22/28</b><span class="h2">Specifications</span></div>
+    <div><b>type-heading-3 · 16/22</b><span class="h3">Shipping &amp; returns</span></div>
+    <div><b>type-body · 14/21</b><span>925 sterling silver, rhodium plated, 16–21 cm.</span></div>
+    <div><b>type-price · 24/28</b><span class="price">$32.85</span></div>
+    <div><b>type-label · 12/17</b><span class="eyebrow">925 sterling silver · rhodium plated</span></div>
+    <div><b>type-caption · 11/16</b><span class="meta">SKU STP01709-7</span></div>
+  </div>
+
+  <p class="meta" style="margin: var(--s12) 0 var(--s8)">
+    Gebouwd met HTML, CSS en een klein stukje JavaScript. Geen framework, geen externe bestanden:
+    de twee fonts staan lokaal in <code>/fonts</code>.
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <b>SILVER PALACE INC.</b>
+    <span>Prototype · UI/UX 1 · Yiming 1192702</span>
+  </div>
+</footer>
+
+<script src="js/prototype.js"></script>
+</body>
+</html>

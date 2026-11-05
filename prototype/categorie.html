@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Categorie — Silver Palace Inc. (prototype)</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .ph { background: radial-gradient(120% 120% at 30% 15%, #FFFFFF 0%, #F0F2F5 58%, #E7EAEE 100%); display: grid; place-items: center; }
+  .ph::after { content: "925"; font: 600 18px/1 var(--font-head); letter-spacing: .12em; color: rgba(197,168,128,.6); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s6); }
+  .pager { display: flex; align-items: center; gap: var(--s2); margin-top: var(--s8); }
+  .pager button { width: 38px; height: 38px; border: 1px solid var(--line-d); background: var(--surface); border-radius: var(--r-sm); font: 500 var(--small)/1 var(--font-body); cursor: pointer; }
+  .pager button[aria-current="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .pager button:hover:not([aria-current="true"]) { border-color: var(--ink-3); }
+  .pager .count { margin-left: auto; font: 400 var(--caption)/1.5 var(--font-body); color: var(--ink-2); }
+</style>
+</head>
+<body>
+
+<div class="proto-bar">
+  <span>Prototype — UI/UX 1 · Yiming · 1192702</span>
+  <a href="index.html">Overzicht</a>
+  <span class="on">Categoriepagina</span>
+  <a href="product.html">Productpagina</a>
+</div>
+
+<div class="announce">B2B only · $200 minimum order · order before 3 pm, shipped today</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="#">Silver Palace<span>inc.</span></a>
+
+    <form class="search" role="search" onsubmit="return false">
+      <label class="visually-hidden" for="q">Search</label>
+      <input id="q" type="search" placeholder="Search by SKU, name or size">
+      <button type="submit" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6"/><path d="M15.5 15.5 20 20"/></svg>
+      </button>
+    </form>
+
+    <nav class="utility" aria-label="Utility">
+      <a href="#">EN</a>
+      <a href="#">Log in</a>
+      <a class="cart" href="#">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2 11h11l2-8H6"/><circle cx="9" cy="19" r="1.4"/><circle cx="18" cy="19" r="1.4"/></svg>
+        Cart <span class="cart__count" id="cartCount">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Hoofdmenu">
+  <div class="container">
+    <ul class="nav__list">
+      <li><a href="#">New in</a></li>
+      <li><a href="categorie.html" aria-current="page">Bracelets</a></li>
+      <li><a href="#">Rings</a></li>
+      <li><a href="#">Necklaces</a></li>
+      <li><a href="#">Earrings</a></li>
+      <li><a href="#">14K Gold</a></li>
+      <li><a href="#">Outlet</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="catalogue">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › <a href="#">Bracelets</a> › 925 Silver</p>
+
+    <div style="padding-top: var(--s2)">
+      <h1 class="h1">Bracelets — 925 Sterling Silver</h1>
+      <p class="meta" style="margin: var(--s2) 0 0"><span id="resultCount">128 results</span></p>
+    </div>
+
+    <div class="grid">
+      <!-- ---------- filterrail: 3 kolommen ---------- -->
+      <aside class="filters" style="grid-column: span 3" aria-label="Filters">
+        <div class="filters__head">
+          <p class="filters__title">Filter</p>
+          <button class="filters__clear" type="button">Clear all</button>
+        </div>
+
+        <div class="chips" id="activeChips">
+          <button class="chip-x" type="button">Size 18
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
+          </button>
+          <button class="chip-x" type="button">925 Silver
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 5l14 14M19 5 5 19"/></svg>
+          </button>
+        </div>
+
+        <div class="filter-group">
+          <p class="filter-group__title" id="sizeGroup">Size (cm)</p>
+          <div class="sizes" role="group" aria-labelledby="sizeGroup">
+            <button class="size-btn" aria-pressed="false">16</button>
+            <button class="size-btn" aria-pressed="false">17</button>
+            <button class="size-btn" aria-pressed="true">18</button>
+            <button class="size-btn" aria-pressed="false">19</button>
+            <button class="size-btn" aria-pressed="false">20</button>
+            <button class="size-btn" aria-pressed="false">21</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <p class="filter-group__title">Material</p>
+          <label class="check"><input type="checkbox" checked> 925 Sterling Silver <span class="check__count">124</span></label>
+          <label class="check"><input type="checkbox"> Rhodium plated <span class="check__count">86</span></label>
+          <label class="check"><input type="checkbox"> 14K Gold <span class="check__count">32</span></label>
+        </div>
+
+        <div class="filter-group">
+          <p class="filter-group__title">Price</p>
+          <div style="display:flex; gap: var(--s2)">
+            <input class="select" style="width:100%" value="$0" aria-label="Minimum price">
+            <input class="select" style="width:100%" value="$250" aria-label="Maximum price">
+          </div>
+        </div>
+
+        <div class="filters__foot">
+          <button class="btn btn--primary btn--block" type="button" id="showResults">Show 128 results</button>
+        </div>
+      </aside>
+
+      <!-- ---------- resultaten: 9 kolommen ---------- -->
+      <section style="grid-column: span 9" aria-label="Resultaten">
+        <div class="results" style="padding-bottom: var(--s4)">
+          <label class="visually-hidden" for="sort">Sort</label>
+          <select class="select" id="sort">
+            <option>Sort: most relevant</option>
+            <option>Price low → high</option>
+            <option>Price high → low</option>
+            <option>New in</option>
+          </select>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card__media ph"></div>
+            <div class="card__body">
+              <span class="badge">Bestseller</span>
+              <p class="meta" style="margin:0">STP01709-7</p>
+              <h2 class="card__title">Tennis Bracelet 3 mm</h2>
+              <p class="card__price" style="margin:0">$32.85</p>
+              <p class="card__tier" style="margin:0">12+ pcs $29.95</p>
+              <p class="card__stock" style="margin:0"><span class="dot"></span> In stock</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media ph"></div>
+            <div class="card__body">
+              <p class="meta" style="margin:0">STP01712-7</p>
+              <h2 class="card__title">Curb Chain Bracelet 4 mm</h2>
+              <p class="card__price" style="margin:0">$28.40</p>
+              <p class="card__tier" style="margin:0">12+ pcs $26.10</p>
+              <p class="card__stock" style="margin:0"><span class="dot"></span> In stock</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media ph"></div>
+            <div class="card__body">
+              <p class="meta" style="margin:0">STP01731-7</p>
+              <h2 class="card__title">Box Chain Bracelet 2 mm</h2>
+              <p class="card__price" style="margin:0">$24.90</p>
+              <p class="card__tier" style="margin:0">12+ pcs $22.50</p>
+              <p class="card__stock" style="margin:0"><span class="dot"></span> In stock</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media ph"></div>
+            <div class="card__body">
+              <p class="meta" style="margin:0">STP01688-7</p>
+              <h2 class="card__title">Figaro Chain Bracelet 5 mm</h2>
+              <p class="card__price" style="margin:0">$36.20</p>
+              <p class="card__tier" style="margin:0">12+ pcs $33.40</p>
+              <p class="card__stock" style="margin:0"><span class="dot"></span> In stock</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media ph"></div>
+            <div class="card__body">
+              <p class="meta" style="margin:0">STP01455-7</p>
+              <h2 class="card__title">Rope Chain Bracelet 3 mm</h2>
+              <p class="card__price" style="margin:0">$27.60</p>
+              <p class="card__tier" style="margin:0">12+ pcs $25.20</p>
+              <p class="card__stock" style="margin:0"><span class="dot"></span> In stock</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media ph"></div>
+            <div class="card__body">
+              <p class="meta" style="margin:0">STP01802-7</p>
+              <h2 class="card__title">Cable Chain Bracelet 2 mm</h2>
+              <p class="card__price" style="margin:0">$21.80</p>
+              <p class="card__tier" style="margin:0">12+ pcs $19.90</p>
+              <p class="card__stock" style="margin:0"><span class="dot"></span> In stock</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="pager">
+          <button type="button" aria-label="Vorige">‹</button>
+          <button type="button" aria-current="true">1</button>
+          <button type="button">2</button>
+          <button type="button">3</button>
+          <button type="button">4</button>
+          <button type="button" aria-label="Volgende">›</button>
+          <span class="count">Showing 1–12 of 128</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <b>SILVER PALACE INC.</b>
+    <span>B2B wholesale · $200 minimum · worldwide shipping</span>
+  </div>
+</footer>
+
+<script src="js/prototype.js"></script>
+</body>
+</html>

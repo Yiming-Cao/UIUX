@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product — Silver Palace Inc. (prototype)</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* placeholder voor de productfoto (prototype heeft geen beeldbank) */
+  .ph { background: radial-gradient(120% 120% at 30% 15%, #FFFFFF 0%, #F0F2F5 58%, #E7EAEE 100%); display: grid; place-items: center; }
+  .ph::after { content: "925"; font: 600 22px/1 var(--font-head); letter-spacing: .12em; color: rgba(197,168,128,.6); }
+  .ph--lg::after { font-size: 40px; }
+</style>
+</head>
+<body>
+
+<!-- prototype-navigatie: hoort niet bij het ontwerp, alleen bij de demo -->
+<div class="proto-bar">
+  <span>Prototype — UI/UX 1 · Yiming · 1192702</span>
+  <a href="index.html">Overzicht</a>
+  <a href="categorie.html">Categoriepagina</a>
+  <span class="on">Productpagina</span>
+</div>
+
+<div class="announce">B2B only · $200 minimum order · order before 3 pm, shipped today</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="#">Silver Palace<span>inc.</span></a>
+
+    <form class="search" role="search" onsubmit="return false">
+      <label class="visually-hidden" for="q">Search</label>
+      <input id="q" type="search" placeholder="Search by SKU, name or size">
+      <button type="submit" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6"/><path d="M15.5 15.5 20 20"/></svg>
+      </button>
+    </form>
+
+    <nav class="utility" aria-label="Utility">
+      <a href="#">EN</a>
+      <a href="#">Log in</a>
+      <a class="cart" href="#">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2 11h11l2-8H6"/><circle cx="9" cy="19" r="1.4"/><circle cx="18" cy="19" r="1.4"/></svg>
+        Cart <span class="cart__count" id="cartCount">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Hoofdmenu">
+  <div class="container">
+    <ul class="nav__list">
+      <li><a href="#">New in</a></li>
+      <li><a href="categorie.html" aria-current="page">Bracelets</a></li>
+      <li><a href="#">Rings</a></li>
+      <li><a href="#">Necklaces</a></li>
+      <li><a href="#">Earrings</a></li>
+      <li><a href="#">14K Gold</a></li>
+      <li><a href="#">Outlet</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="product">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> › <a href="categorie.html">Bracelets</a> › 925 Silver › Tennis</p>
+
+    <div class="grid">
+      <!-- ---------- galerij: 7 kolommen ---------- -->
+      <section class="gallery" style="grid-column: span 7" aria-label="Productfoto’s">
+        <div class="gallery__main ph ph--lg" role="img" aria-label="Productfoto, aanzicht 1 van 4"></div>
+        <div class="thumbs">
+          <div class="thumb ph" aria-current="true"></div>
+          <div class="thumb ph"></div>
+          <div class="thumb ph"></div>
+          <div class="thumb ph"></div>
+        </div>
+      </section>
+
+      <!-- ---------- buy box: 5 kolommen ---------- -->
+      <section class="buybox" style="grid-column: span 5" aria-label="Koop dit product">
+        <p class="eyebrow">925 sterling silver · rhodium plated</p>
+        <h1 class="h1" style="margin-top: var(--s2)">Tennis Bracelet 3 mm — Rhodium Plated</h1>
+
+        <div class="buybox__top" style="margin-top: var(--s3)">
+          <span class="meta">SKU STP01709-7</span>
+          <span class="stock"><span class="dot" aria-hidden="true"></span> In stock</span>
+        </div>
+
+        <hr>
+
+        <p class="price" style="margin: 0">$32.85
+          <span class="price-unit">per piece · excl. VAT</span>
+        </p>
+        <p class="card__tier" style="margin: var(--s2) 0 0">12+ pcs $29.95 &nbsp;·&nbsp; 24+ pcs $27.50</p>
+
+        <hr>
+
+        <div class="buybox__top">
+          <p class="h3" style="margin:0">Size</p>
+          <a class="meta" href="#" style="text-decoration: underline">Size guide</a>
+        </div>
+
+        <div class="sizepicker" role="group" aria-label="Maat" style="margin-top: var(--s2)">
+          <button class="size" aria-pressed="false" data-cm="16" data-in="6.3"><b>16</b><small>6.3 in</small></button>
+          <button class="size" aria-pressed="false" data-cm="17" data-in="6.7"><b>17</b><small>6.7 in</small></button>
+          <button class="size" aria-pressed="true"  data-cm="18" data-in="7.1"><b>18</b><small>7.1 in</small></button>
+          <button class="size" aria-pressed="false" data-cm="19" data-in="7.5"><b>19</b><small>7.5 in</small></button>
+          <button class="size" aria-pressed="false" data-cm="20" data-in="7.9"><b>20</b><small>7.9 in</small></button>
+          <button class="size" disabled><b>21</b><small>sold out</small></button>
+        </div>
+        <p class="meta" style="margin-top: var(--s2)">Selected: <span id="sizeLabel">18 cm (7.1 in)</span></p>
+
+        <div class="buybox__top" style="margin-top: var(--s4)">
+          <p class="h3" style="margin:0">Quantity <span class="meta" style="font-weight:400">min. 3 per size</span></p>
+          <span class="meta">25 pcs in stock</span>
+        </div>
+
+        <div class="stepper" style="margin-top: var(--s2)">
+          <button type="button" id="qtyMinus" aria-label="Minder">−</button>
+          <label class="visually-hidden" for="qty">Aantal</label>
+          <input id="qty" type="text" inputmode="numeric" value="12">
+          <button type="button" id="qtyPlus" aria-label="Meer">+</button>
+        </div>
+
+        <button class="btn btn--primary btn--block btn--lg" id="addToCart" style="margin-top: var(--s4)">
+          <span class="btn__spinner" aria-hidden="true"></span>
+          <span class="btn__label">Add to cart</span>
+        </button>
+
+        <div class="notice notice--success" id="notice" role="status" aria-live="polite" hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+          <span id="noticeText">Added — 12 pcs</span>
+        </div>
+
+        <div class="notice notice--error" id="error" role="alert" hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 4 2.5 20h19L12 4Z"/><path d="M12 10v4M12 17v.5"/></svg>
+          <span>Minimum is 3 pieces per size.</span>
+        </div>
+
+        <p class="meta" style="margin-top: var(--s3)">
+          <a href="#" style="text-decoration: underline">Add to quote list</a> &nbsp;·&nbsp;
+          <a href="#" style="text-decoration: underline">Request a sample</a>
+        </p>
+
+        <hr>
+
+        <ul class="trust">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg> Ships within 1 business day</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 20 6v6c0 5-4 8-8 9-4-1-8-4-8-9V6Z"/></svg> 14-day return period</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h9l7 7-8 8-8-8z"/><circle cx="8" cy="9" r="1.3"/></svg> Volume pricing from 12 pcs</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- ---------- specificaties + verzending ---------- -->
+    <div class="grid" style="margin-top: var(--s8)">
+      <section class="spec" style="grid-column: span 7; margin-top:0">
+        <h2 class="h2">Specifications</h2>
+        <dl>
+          <div class="row"><dt>Material</dt><dd>925 sterling silver</dd></div>
+          <div class="row"><dt>Finish</dt><dd>Rhodium plated</dd></div>
+          <div class="row"><dt>Stone</dt><dd>Clear CZ, 3 mm</dd></div>
+          <div class="row"><dt>Width</dt><dd>3 mm</dd></div>
+          <div class="row"><dt>Clasp</dt><dd>Lobster clasp</dd></div>
+          <div class="row"><dt>Weight</dt><dd>8.4 g per piece</dd></div>
+          <div class="row"><dt>Origin</dt><dd>Italy</dd></div>
+        </dl>
+      </section>
+
+      <aside class="aside-card" style="grid-column: span 5">
+        <h3 class="h3">Shipping &amp; returns</h3>
+        <div class="row"><b>Orders before 3 PM</b><span>Shipped the same business day</span></div>
+        <div class="row"><b>Free shipping</b><span>On orders above $500</span></div>
+        <div class="row"><b>Returns</b><span>14 days, unused items only</span></div>
+        <div class="row"><b>Questions?</b><span><a href="#" style="text-decoration: underline">Open chat</a></span></div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <b>SILVER PALACE INC.</b>
+    <span>B2B wholesale · $200 minimum · worldwide shipping</span>
+  </div>
+</footer>
+
+<script src="js/prototype.js"></script>
+</body>
+</html>
