@@ -20,7 +20,7 @@ contrasten nagerekend volgens de WCAG-formule, verhoudingen opgemeten via cap-ho
 
 | Pad | Inhoud |
 |---|---|
-| [`UIUX Website verbeteringen - compleet.docx`](<UIUX Website verbeteringen - compleet.docx>) | Het einddocument — 34 pagina's, 17 figuren, 42 tabellen |
+| [`UIUX Website verbeteringen - compleet.docx`](<UIUX Website verbeteringen - compleet.docx>) | Het einddocument — vijf hoofdstukken, vier figuren, geen tabellen |
 | [`prototype/`](prototype/) | Werkend prototype in HTML/CSS/JS (drie pagina's, geen framework) |
 | [`figuren/`](figuren/) | Alle figuren uit het document als PNG |
 
@@ -54,7 +54,7 @@ Open [`prototype/index.html`](prototype/index.html) — dubbelklikken is genoeg,
 installatie nodig.
 
 - Gebouwd met de hand in HTML, CSS en een klein stukje JavaScript. **Geen Figma, geen AI, geen framework.**
-- Elke kleur, afstand en elk corps in `styles.css` komt uit de tokens van hoofdstuk 10 van het document.
+- Elke kleur, afstand en elk corps in `styles.css` staat als CSS-token in `:root`, bovenaan het bestand.
 - De fonts (Cinzel en Inter) zitten als subset ingebed in `css/fonts.css`, zodat het ook op `file://` werkt.
 - Wat je kunt uitproberen: maat kiezen, aantal onder het minimum zetten (foutmelding), toevoegen aan de
   winkelwagen (loading → bevestiging), en met Tab door de pagina gaan (zichtbare focusring).
