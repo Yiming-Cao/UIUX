@@ -1,6 +1,6 @@
 # UI/UX 1 — Website verbeteringen · Silver Palace Inc.
 
-Verbetervoorstel, prototype en video-script voor de eindopdracht **UI/UX 1** (ROC Nijmegen, jaar 4).
+Verbetervoorstel, prototype en video voor de eindopdracht **UI/UX 1** (ROC Nijmegen, jaar 4).
 
 **Yiming Cao · 1192702**
 
@@ -21,6 +21,7 @@ contrasten nagerekend volgens de WCAG-formule, verhoudingen opgemeten via cap-ho
 | Pad | Inhoud |
 |---|---|
 | [`UIUX Website verbeteringen - compleet.docx`](<UIUX Website verbeteringen - compleet.docx>) | Het einddocument — vijf hoofdstukken, vier figuren, geen tabellen |
+| [`Yiming-1192702-eindopdracht-uiux.mp4`](Yiming-1192702-eindopdracht-uiux.mp4) | De video-opname voor de eindopdracht (5:34, 43 MB) |
 | [`prototype/`](prototype/) | Werkend prototype in HTML/CSS/JS (drie pagina's, geen framework) |
 | [`figuren/`](figuren/) | Alle figuren uit het document als PNG |
 
